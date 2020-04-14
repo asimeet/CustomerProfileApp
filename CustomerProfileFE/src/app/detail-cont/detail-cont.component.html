@@ -1,0 +1,79 @@
+  <div class="list-group" *ngIf="custService.getCustomerBasic()">
+    <div class="list-group-item bg-secondary text-white">
+      <div class="row col-12">
+        <div class="col-3 pl-1"><b>Addresses</b></div>
+        <div class="col-7 search-container"></div>
+        <div class="col-1 justify-content-right">
+          <button class="btn btn-primary text-center" (click)="toggleModal(true);">+</button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="details">
+      <div class="list-group-item" *ngFor="let data of details.addresses">
+        <div class="row col-12"><div class="col-5 font-italic">Line 1</div>{{data.addressLine1}}</div>
+        <div class="row col-12"><div class="col-5 font-italic">Line 2 </div>{{data.addressLine2}}</div>
+        <div class="row col-12"><div class="col-5 font-italic">City </div>{{data.city}}</div>
+        <div class="row col-12"><div class="col-5 font-italic">State/Province </div>{{data.stateProvince}}</div>
+        <div class="row col-12"><div class="col-5 font-italic">Country </div>{{data.country}}</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+
+  <div class="my-modal" id="cust-modal" *ngIf="modalDisp">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">New Address</h4>
+          <button type="button" class="close" (click)="toggleModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <fieldset>
+              <div class="row col-12">
+                <div class="col-5">Line 1</div>
+                :
+                <div class="col-6">
+                  <input [(ngModel)]="newAddr.addressLine1" [ngModelOptions]="{standalone: true}" required=true>
+                </div>
+              </div>
+              <div class="row col-12">
+                <div class="col-5">Line 2</div>
+                :
+                <div class="col-6">
+                  <input [(ngModel)]="newAddr.addressLine2" [ngModelOptions]="{standalone: true}" required=true>
+                </div>
+              </div>
+              <div class="row col-12">
+                <div class="col-5">City</div>
+                :
+                <div class="col-6">
+                  <input [(ngModel)]="newAddr.city" [ngModelOptions]="{standalone: true}" required=true>
+                </div>
+              </div>
+              <div class="row col-12">
+                <div class="col-5">Sate/Province</div>
+                :
+                <div class="col-6">
+                  <input [(ngModel)]="newAddr.stateProvince" [ngModelOptions]="{standalone: true}" required=true>
+                </div>
+              </div>
+              <div class="row col-12">
+                <div class="col-5">Country</div>
+                :
+                <div class="col-6">
+                  <input [(ngModel)]="newAddr.country" [ngModelOptions]="{standalone: true}" required=true>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="toggleModal()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addAddress()">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>

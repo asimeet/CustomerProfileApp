@@ -1,0 +1,24 @@
+<div class="container h-100 row col-12">
+  <div class="h-100 col-4">
+    <app-master-side-nav></app-master-side-nav>
+  </div>
+  <div class="border"></div>
+  <div class="h-100 col-7">
+    <app-detail-cont></app-detail-cont>
+  </div>
+  <div class="my-modal" id="error-modal" *ngIf="showModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-light">
+          <h4 class="modal-title">Error!</h4>
+          <button type="button" class="close" (click)="toggleModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          {{errorMsg}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="toggleModal()">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
