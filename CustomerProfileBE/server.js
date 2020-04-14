@@ -9,9 +9,10 @@ const cors = require('cors');
 
 mongoose.connect(config['mongo-url']);
 app.use(cors());
-var allowedOrigins = ['http://localhost:4200',
-    'http://0:0:0:0:4200',
-    'http://18.206.158.114:4200'
+var allowedOrigins = [
+    'http://18.206.158.114:4200',
+    'http://localhost:4200',
+    'http://0:0:0:0:4200'
 ];
 app.use(cors({
     origin: function (origin, callback) {
