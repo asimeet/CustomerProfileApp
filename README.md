@@ -1,7 +1,7 @@
 # The Customer Profile App
 App for stroing customer Information
 
-<b>Basic Info<b>
+<b>Basic Info</b>
 <ul>Author: Asimeet Padhee</ul>
 <ul><a href="http://18.206.158.114:4200/">APPLICATION URL</a></ul>
 
