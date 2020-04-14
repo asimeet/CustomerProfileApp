@@ -1,5 +1,5 @@
-# CustomerProfileApp
-Customer-Profile-Angular-Master-Detail-App
+# The Customer Profile App
+App for stroing customer Information
 
 <b>Basic Info<b>
 <ul>Author: Asimeet Padhee</ul>
@@ -14,3 +14,12 @@ Customer-Profile-Angular-Master-Detail-App
 <b>Project Structure</b>
 <ul>CustomerProfileBE ~ Backend in Node.js v10.x</ul>
 <ul>CustomerProfileFE ~ Fronend in Anagular 5.x</ul>
+
+<b>Functionalities</b>
+<ul>Adding customer to database one at a time </ul>
+<ul>Adding address of a customer one at a time </ul>
+
+<b>Future Improvements</b>
+<ul>Editing and deleting customers and thier addresses</ul>
+<ul>PDF Download</ul>
+<ul>Bulk Import</ul>
