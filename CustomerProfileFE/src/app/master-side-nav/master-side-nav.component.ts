@@ -32,7 +32,7 @@ export class MasterSideNavComponent implements OnInit {
 
   getDetail(event:any, id: string) {
     this.el.nativeElement.querySelectorAll(".list-group-item").forEach(item => item.classList.remove("bg-selected"));
-    event.toElement.parentElement.classList.add("bg-selected");
+    event.currentTarget.classList.add("bg-selected");
     this.custService.getDetailsById(id);
   }
   toggleModal(create = false) {
