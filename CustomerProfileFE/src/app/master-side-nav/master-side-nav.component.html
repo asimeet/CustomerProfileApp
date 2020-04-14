@@ -10,7 +10,7 @@
     </div>
   </div>
   <div *ngFor="let data of custBasic | custFilter: searchText">
-    <div class="list-group-item list-group-item-action" (click)="getDetail(data.empId)">
+    <div [class]="getListGroupItemClass(data.empId)" (click)="getDetail($event,data.empId)">
       <div class="row col-12"><div class="col-5 font-italic">Name </div>{{data.name}}</div>
       <div class="row col-12"><div class="col-5 font-italic">Employee Id </div>{{data.empId}}</div>
       <div class="row col-12"><div class="col-5 font-italic">Sex </div>{{data.sex}}</div>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { CustomerService } from "../service/customer.service";
 import { CustomerBasic } from "../model/customer-basic";
 import { ThrowStmt } from '@angular/compiler';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-master-side-nav',
@@ -15,7 +16,7 @@ export class MasterSideNavComponent implements OnInit {
   searchText: string;
 
 
-  constructor(private custService: CustomerService) {
+  constructor(private custService: CustomerService, private el: ElementRef) {
 
   }
 
@@ -29,7 +30,9 @@ export class MasterSideNavComponent implements OnInit {
     );
   }
 
-  getDetail(id: string) {
+  getDetail(event:any, id: string) {
+    this.el.nativeElement.querySelectorAll(".list-group-item").forEach(item => item.classList.remove("bg-selected"));
+    event.toElement.parentElement.classList.add("bg-selected");
     this.custService.getDetailsById(id);
   }
   toggleModal(create = false) {
@@ -49,5 +52,10 @@ export class MasterSideNavComponent implements OnInit {
         this.custService.setError(err.error.message);
       }
     )
+  }
+  getListGroupItemClass(id: string) {
+    let classStr = "list-group-item list-group-item-action"
+    if(id == this.custBasic[0].empId) classStr += " bg-selected";
+    return classStr;
   }
 }
