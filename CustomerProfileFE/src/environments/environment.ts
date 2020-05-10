@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  //be: "http://0.0.0.0:3990"
-  be: "http://localhost:3990"
+  be: "http://0.0.0.0:3990"
+  //be: "http://localhost:3990"
 };
