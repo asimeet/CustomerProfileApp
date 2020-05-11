@@ -10,7 +10,7 @@ const cors = require('cors');
 mongoose.connect(config['mongo-url']);
 app.use(cors());
 var allowedOrigins = [
-    'http://cp.asimeet.tech',
+    'http://www.asimeet.tech',
     'http://localhost:4200',
     'http://0:0:0:0:4200'
 ];
